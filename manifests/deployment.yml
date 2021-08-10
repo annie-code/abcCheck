@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "helloworldaks-cd2e"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "helloworldaks-cd2e"
+  template:
+    metadata:
+      labels:
+        app: "helloworldaks-cd2e"
+    spec:
+      containers:
+        - name: "helloworldaks-cd2e"
+          image: "helloworldrcontainer.azurecr.io/helloworldaks"
+          ports:
+          - containerPort: 80
